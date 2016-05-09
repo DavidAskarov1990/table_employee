@@ -1,0 +1,90 @@
+    <table id="table">
+        <tr id="headerTable">
+            <td class="col-sm-3 text-center">ФИО</td>
+            <td class="col-sm-3 text-center">Пол</td>
+            <td class="col-sm-3 text-center">Контакт</td>
+            <td class="col-sm-3 text-center">Трудоустройство</td>
+        </tr>
+        <tr on-long-press="deleteEmployeeModal(item)" id="bodyTable" dir-paginate="item in employee|itemsPerPage:10 |filter:query" data-toggle="modal" data-target="#regularEdit" ng-click="setId(item)">
+            <td class="col-sm-3 text-center">{{item.fullName}}</td>
+            <td class="col-sm-3 text-center">{{item.sex}}</td>
+            <td class="col-sm-3 text-center">{{item.contactInformation}}</td>
+            <td class="col-sm-3 text-center">{{item.dateAdded}}</td>
+        </tr>
+    </table>
+
+    <dir-pagination-controls class="col-sm-12 text-center" max-size="5" direction-links="true" boundary-links="true" ></dir-pagination-controls>
+
+    <div id="regularEdit" class="modal fade" ng-controller="regularTimeCtrl">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body" id="regularEditModal">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="active"><a href="#regularTab" aria-controls="home" role="tab" data-toggle="tab">Табельное время</a></li>
+                        <li><a href="#employeeTab" aria-controls="profile" role="tab" data-toggle="tab">Сотрудник</a></li>
+                    </ul>
+                    <div>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="regularTab">
+                                <span class="col-sm-3 text-center">Начало работы</span>
+                                <div class="col-sm-9 text-center">
+                                    <input class="col-sm-8 panel panel-default" type="text" ng-model="regularTime.startWork"/>
+                                </div>
+                                <span class="col-sm-3 text-center">Конец работы</span>
+                                <div class="col-sm-9 text-center">
+                                    <input class="col-sm-8 panel panel-default" type="text" ng-model="regularTime.finishWork"/>
+                                </div>
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane" id="employeeTab">
+                                <span class="col-sm-5 text-center">Полное Имя</span>
+                                <div class="col-sm-7 text-center">
+                                    <input class="col-sm-10 panel panel-default" type="text" ng-model="dataEmployee.fullName"/>
+                                </div>
+
+                                <span class="col-sm-5 text-center">Пол</span>
+                                <div class="col-sm-7 text-center">
+                                    <input class="col-sm-10 panel panel-default" type="text" ng-model="dataEmployee.sex"/>
+                                </div>
+
+                                <span class="col-sm-5 text-center">Контактная информация</span>
+                                <div class="col-sm-7 text-center">
+                                    <input class="col-sm-10 panel panel-default" type="text" ng-model="dataEmployee.contactInformation"/>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-success btn-size" type="button" ng-click="setEdit()">Ok</button>
+                    <button class="btn btn-default btn-size" type="button" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="deleteConfirm" class="modal fade" ng-controller="regularTimeCtrl">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header"><button class="close" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title text-center">Удаление <span>"{{deleteEmployeeItem.fullName}}"</span></h4>
+                </div>
+
+                <div class="modal-body text-center">
+                    <h4>Вы уверены, что хотите удалить сотрудника?</h4>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-danger btn-size" type="button" ng-click="deleteEmployee()">Delete</button>
+                    <button class="btn btn-default btn-size" type="button" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+

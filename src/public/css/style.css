@@ -1,0 +1,60 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#table{
+  width: 100%;
+}
+
+#headerTable{
+    font-size: 20px;
+    padding: 20px;
+    width: 100%;
+}
+
+#headerTable td{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid gray;
+    color: #262626;
+}
+
+#bodyTable td{
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border: 1px solid gray;
+}
+
+#bodyTable:hover{
+    background-color: #5bc0de;
+    color: #fff;
+    cursor: pointer;
+}
+
+#regularEditModal{
+    height:230px;
+}
+
+section{
+  background-color: ghostwhite;
+}
+
+.btn-size{
+    width: 80px;
+}
+
+#deleteConfirm span{
+    color: #c11110;
+}
+
+#regularTab{
+    padding-top: 30px;
+}
+
+#employeeTab{
+    padding-top: 30px;
+}

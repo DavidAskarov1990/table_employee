@@ -1,0 +1,22 @@
+<div class="container-dimness">
+    <div class="wrapper-authorization">
+        <div id="titleAuthorization" class="col-sm-12 text-center">
+            <h2><i>Авторизация</i></h2>
+        </div>
+        <div class="col-sm-12 text-center" id="containerLogin">
+            <h4 class="col-sm-4 text-center"><i>Логин</i></h4>
+            <input ng-model="authorization.login" type="text" class="col-sm-6 text-center panel panel-default"/>
+        </div>
+
+        <div class="col-sm-12 text-center" id="containerPassword">
+            <h4 class="col-sm-4 text-center"><i>Пароль</i></h4>
+            <input ng-model="authorization.password" type="password" class="col-sm-6 text-center panel panel-default"/>
+        </div>
+
+        <div id="containerBtn" class="col-sm-12">
+            <a class=" btn btn-link" ui-sref="registration"><i>Регистрация</i></a>
+            <button ng-click="clickAuthorization()" class="btn btn-success btn-size col-sm-offset-3">Ok</button>
+            <button class="btn btn-default btn-size" ui-sref="home">Отмена</button>
+        </div>
+    </div>
+</div>

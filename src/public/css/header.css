@@ -1,0 +1,55 @@
+header{
+    width: 100%;
+    height: 120px;
+    background-color: #34332E;
+    border: 1px solid #000;
+}
+
+header h1{
+    color: #fff;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+#addEmployee{
+    color: #fff;
+    font-size: 16px;
+    border: 1px solid #fff;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+#searchEmployee{
+    border: 1px solid #fff;
+    margin-top: 50px;
+}
+
+#addEmployee:hover{
+    color: #000;
+    font-size: 16px;
+    border: 1px solid #fff;
+    margin-top: 50px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+#modalId{
+    height: 160px;
+}
+
+#authorization{
+    color: #fff;
+    margin-top: 50px;
+    font-size: 16px;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+
+#authorization:hover{
+    color: #000;
+    font-size: 16px;
+    border: 1px solid #fff;
+    margin-top: 50px;
+    cursor: pointer;
+    background-color: #fff;
+}

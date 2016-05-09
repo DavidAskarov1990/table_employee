@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/style.css'/>
+    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="/vendor/bower_components/bootstrap/dist/css/bootstrap-theme.css"/>
+    <link rel="stylesheet" href="/vendor/bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/vendor/toastr/toastr.css"/>
+    <link rel="stylesheet" href="css/authorization.css"/>
+
+    <script src="/vendor/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/vendor/bower_components/angular/angular.js"></script>
+    <script src="/vendor/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/vendor/jquery-ui.js"></script>
+    <script src="vendor/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="vendor/bower_components/angularUtils-pagination/dirPagination.js"></script>
+    <script src="vendor/toastr/toastr.js"></script>
+
+    <script src="/js/app.js"></script>
+    <script src="js/controller/tableEmployee.js"></script>
+    <script src="js/controller/newEmpolyee.js"></script>
+    <script src="/js/controller/edit.js"></script>
+    <script src="js/controller/authorization.js"></script>
+    <script src="js/controller/registration.js"></script>
+
+    <script src="js/services/employee.js"></script>
+    <script src="js/services/user.js"></script>
+    <script src="vendor/angular-long-press.js"></script>
+
+  </head>
+  <body>
+      <header>
+          <div class="col-sm-3 text-center" ui-sref="home">
+              <h1>Сотрудники</h1>
+          </div>
+          <input ng-model="query" type="text" class="col-sm-offset-1 col-sm-2 text-center panel-default" id="searchEmployee" placeholder="Поиск"/>
+          <div data-toggle="modal" data-target="#modalAdd" id="addEmployee" class=" col-sm-2 text-center">Добавить</div>
+          <div id="authorization" class="col-sm-offset-2 col-sm-2 text-center" ui-sref="authorization">Авторизация</div>
+
+          <div id="modalAdd" class="modal fade" ng-controller="newEmployeeCtrl">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <button class="close" type="button" data-dismiss="modal">×</button>
+                          <h4 class="modal-title">Добавление нового сотрудника</h4>
+                      </div>
+                      <div class="modal-body" id="modalId" >
+                          <div class="col-sm-4 text-center">ФИО</div>
+                          <input class="text-center col-sm-6 panel panel-default" ng-model="newEmployee.fullName"/>
+
+                          <div class="col-sm-4 text-center">Пол</div>
+                          <input class="text-center col-sm-6 panel panel-default" ng-model="newEmployee.sex"/>
+
+                          <div class="col-sm-4 text-center">Контакты</div>
+                          <input class="text-center col-sm-6 panel panel-default" ng-model="newEmployee.contactInformation"/>
+                      </div>
+                      <div class="modal-footer">
+                          <button class="btn btn-success btn-size" type="button" ng-click="addNewEmployee()">Ok</button>
+                          <button class="btn btn-default btn-size" type="button" data-dismiss="modal">Закрыть</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </header>
+      <section>
+          <div ui-view="center"></div>
+      </section>
+  </body>
+</html>
